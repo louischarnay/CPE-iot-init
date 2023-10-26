@@ -31,9 +31,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Map.Entry<String, String> entry = items.get(position);
         String name = entry.getKey();
-        String value = entry.getValue();
         holder.nameTextView.setText(name);
-        holder.valueTextView.setText(value);
     }
 
     @Override
@@ -43,12 +41,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView nameTextView;
-        TextView valueTextView;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             nameTextView = itemView.findViewById(R.id.name_text_view);
-            valueTextView = itemView.findViewById(R.id.value_text_view);
         }
     }
 
