@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import static android.os.SystemClock.sleep;
+
 import android.util.Log;
 import android.widget.TextView;
 
@@ -43,7 +45,7 @@ public class MyThread {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                while (!Thread.interrupted() && !isError) {
+                while (true) {
                     try {
                         address = InetAddress.getByName(IP);
                         Log.d("UDP", "sendGetValues: " + IP);
@@ -52,18 +54,15 @@ public class MyThread {
                         byte[] data = message.getBytes();
                         DatagramPacket packet = new DatagramPacket(data, data.length, address, PORT);
                         UDPSocket.send(packet);
-                        Thread.sleep(1000);
+                        sleep(1000);
                     } catch (IOException e) {
-                        isError = true;  // Set the flag to true on error
                         Log.e("UDP", "sendGetValues: " + e.getMessage());
-                    } catch (InterruptedException e) {
-                        Log.e("UDP", "sendGetValues: " + e.getMessage());
-                        Thread.currentThread().interrupt();
                     }
                 }
             }
         }).start();
     }
+
     public void send(String message) {
         //send message to microbit
         new Thread(new Runnable() {
