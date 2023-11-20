@@ -84,8 +84,3 @@ Cette application Android est conçue pour communiquer avec un périphérique di
 ## Gestion des Erreurs
 - Les exceptions sont journalisées à des fins de débogage.
 - L'application peut ne pas gérer toutes les erreurs potentielles dans un environnement de production. Une gestion supplémentaire des erreurs peut être nécessaire.
-
-## Licence
-Cette application est fournie telle quelle sous une licence open-source. Consultez le dépôt du projet pour plus de détails.
-
-**Remarque :** Cette documentation donne un aperçu du code. Des détails supplémentaires, des optimisations et des améliorations peuvent être nécessaires en fonction des exigences spécifiques du projet.
