@@ -158,8 +158,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             Character c1 = items.get(0).getKey().charAt(0);
                             Character c2 = items.get(1).getKey().charAt(0);
                             String message = c1 + "" + c2;
-                            Log.d("UDP", "run: " + message);
-                            byte[] data = message.getBytes();
+                            String jsonObject = "{\"receiver\":\"0\",\"emitter\":\"1\",\"data\":[{\"type\":\"O\",\"value\":\"" + message + "\"}]}";
+                            Log.d("UDP", "run: " + jsonObject);
+                            byte[] data = jsonObject.getBytes();
                             DatagramPacket packet = new DatagramPacket(data, data.length, address, PORT);
                             UDPSocket.send(packet);
                         } catch (IOException e) {
