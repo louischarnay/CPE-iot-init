@@ -17,6 +17,7 @@ make cbi
 
 - tiny_aes -> chiffrement
 - ArduinoJson -> json decode lors de la reception
+- Librairie pour l'utilisation du capteur
 
 ## Participants au code
 
